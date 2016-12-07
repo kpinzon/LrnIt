@@ -1,0 +1,40 @@
+﻿<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+    <h1 style="text-align:center"> LOGIN </h1>
+    <div style="text-align:center">
+
+        <form name="loginForm">
+            <div class="form-horizontal">
+                <ul id="validationSummary"></ul>
+
+                <!-- Username  -->
+                <div class="form-group">
+                    <label for="Username" class="control-label col-md-2"> Username </label>
+                    <div class="col-md-10">
+                        <input type="text" ng-model="username" id="Username" class="form-control" />
+                        <div id="validation_for_Username"></div>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="Password" class="control-label col-md-2"> Password </label>
+                    <div class="col-md-10">
+                        <input type="password" ng-model="password" id="Password" class="form-control" />
+                        <div id="validation_for_Password"></div>
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" value="Login" class="btn btn-primary" ng-click="Login()" />
+
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>

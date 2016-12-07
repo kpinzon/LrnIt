@@ -1,0 +1,241 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+
+.profileTags {
+    margin-right: 5px; 
+    margin-top: 7px;
+}
+.profileHeadContainer {
+    height: 175px;
+}
+
+.rowHeight {
+    height: 530px;
+}
+
+
+.dropDownHeight {
+    position: relative;
+    margin-top: 200px;
+}
+
+
+/*.categoryCenter {
+    margin-left: -100px;
+}*/
+
+.centerBoxDiv {
+    width: 65%;
+    text-align: center;
+    border: 2px dashed;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.headlineHome {
+    background: hsla(201, 100%, 96%, 0.85);
+    padding: 0px 10px 15px 10px;
+    border-radius: 15px;
+    width: 700px;
+}
+
+.headerSection {
+    height: 700px;
+}
+
+
+
+.editExperienceBtn {
+    margin-right: 10px;
+}
+
+.howItWorks {
+    background: #fff;
+    height: 375px;
+    padding: 0px 100px;
+}
+
+.about {
+    background: #EFE8E8;
+    height: 200px;
+    padding: 0px 100px;
+}
+
+.footer {
+    background: #fff;
+    height: 50px;
+    padding: 15px 100px;
+    
+}
+
+.navbar {
+    background: #000;
+    margin-bottom: 0px;
+    border: 0;
+
+}
+
+.homePage {
+    background: url('../images/people-woman-coffee-meeting.jpg') no-repeat top center fixed;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    margin-top: -25px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.chooseCategory {
+    position: relative;
+}
+
+.categoryDropdown {
+   position: absolute;
+  
+    margin-left: 265px 
+}
+
+.mainNav li a{
+    color: #107BAC!important;
+    font-size: 16px;
+}
+
+.mainNav li a:hover {
+    color: #fff!important;
+}
+
+.headlineImage {
+    margin-top: 20px;
+}
+
+.pickCategory {
+    width: 250px;
+    
+}
+
+.categoryDropdown li a {
+    cursor: pointer;
+}
+
+.btn-blue {
+  background-color: hsl(195, 60%, 35%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d95b7", endColorstr="#23748e");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#2d95b7), to(#23748e));
+  background-image: -moz-linear-gradient(top, #2d95b7, #23748e);
+  background-image: -ms-linear-gradient(top, #2d95b7, #23748e);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2d95b7), color-stop(100%, #23748e));
+  background-image: -webkit-linear-gradient(top, #2d95b7, #23748e);
+  background-image: -o-linear-gradient(top, #2d95b7, #23748e);
+  background-image: linear-gradient(#2d95b7, #23748e);
+  border-color: #23748e #23748e hsl(195, 60%, 32.5%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
+  -webkit-font-smoothing: antialiased;
+}
+
+.sectionHeadline {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.listOfUsers {
+    margin-top:20px
+}
+
+.categories {
+    margin-top: 30px;
+}
+
+.profileHeadContainer {
+    margin-top: 30px;
+}
+
+.pageView {
+    margin-top: 30px;
+}
+.editTagBtn {
+    margin-right: 5px;
+}
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav .categorySideBar {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ff9999;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav .tagSidebar {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

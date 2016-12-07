@@ -1,0 +1,59 @@
+﻿<div class="container">
+    <div class="convosSentToYou">
+        <strong class="text-center">Conversations Learners Sent To You</strong>
+
+        <div class="row" ng-repeat="convo in convosSentToYou" ng-click="viewConversation(convo.Id,convosSentToYou)">
+
+            <div class="col-md-2">
+                <img src={{convo.Sender.Image}} alt="Alternate Text" />
+            </div>
+            <div class="col-md-10">
+                <div>
+                    SUBJECT: {{convo.Subject}}
+                </div>
+                <div>
+                    From: {{convo.Sender.Fname}} {{convo.Sender.Lname}}
+                </div>
+                <div>
+                    Convo Started: {{convo.TimeCreated}}
+                </div>
+                <div>
+                    Text: {{convo.Messages[convo.Messages.length - 1].Text}}
+                </div>
+                <div ng-hide="convo.Messages[convo.Messages.length - 1].IsRead">
+                    UNREAD
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="convosYouSent">
+        <strong class="text-center">Conversations You Sent To Experts</strong>
+
+        <div class="row" ng-repeat="convo in convosYouSent" ng-click="viewConversation(convo.Id,convosYouSent)">
+
+            <div class="col-md-2">
+                <img src={{convo.Recipient.Image}} alt="Alternate Text" />
+            </div>
+            <div class="col-md-10">
+                <div>
+                    SUBJECT: {{convo.Subject}}
+                </div>
+                <div>
+                    To: {{convo.Recipient.Fname}} {{convo.Recipient.Lname}}
+                </div>
+                <div>
+                    Convo Started: {{convo.TimeCreated}}
+                </div>
+                <div>
+                    Text: {{convo.Messages[convo.Messages.length - 1].Text}}
+                </div>
+                <div ng-hide="convo.Messages[convo.Messages.length - 1].IsRead">
+                    UNREAD
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

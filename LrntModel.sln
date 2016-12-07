@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LrntModel", "LrntModel\LrntModel.csproj", "{DF6D2DBE-BBA6-43A9-9A9F-5276D704D145}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LrntAdmin", "LrntAdmin\LrntAdmin.csproj", "{8BB20F5C-9A7D-48FC-A15C-CF574CB0D4FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LrnItFront", "LrnItFront\LrnItFront.csproj", "{579EF56D-21E6-415E-A784-4EABEE7A2BA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF6D2DBE-BBA6-43A9-9A9F-5276D704D145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6D2DBE-BBA6-43A9-9A9F-5276D704D145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6D2DBE-BBA6-43A9-9A9F-5276D704D145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6D2DBE-BBA6-43A9-9A9F-5276D704D145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB20F5C-9A7D-48FC-A15C-CF574CB0D4FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB20F5C-9A7D-48FC-A15C-CF574CB0D4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB20F5C-9A7D-48FC-A15C-CF574CB0D4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB20F5C-9A7D-48FC-A15C-CF574CB0D4FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{579EF56D-21E6-415E-A784-4EABEE7A2BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579EF56D-21E6-415E-A784-4EABEE7A2BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579EF56D-21E6-415E-A784-4EABEE7A2BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579EF56D-21E6-415E-A784-4EABEE7A2BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

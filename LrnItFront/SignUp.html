@@ -1,0 +1,73 @@
+﻿<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <h1 style="text-align:center"> SIGN UP </h1>
+        <div style="text-align:center">
+
+            <form name="theForm">
+                <div class="form-horizontal">
+                    <ul id="validationSummary"></ul>
+                    <div class="form-group">
+                        <label for="Fname" class="control-label col-md-3"> First Name </label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="data.Fname" id="First name" class="form-control" />
+                            <div id="validation_for_Fname"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Lname" class="control-label col-md-3"> Last Name </label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="data.Lname" id="Lname" class="form-control" />
+                            <div id="validation_for_Lname"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Email" class="control-label col-md-3"> Email </label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="data.Email" id="Email" class="form-control" />
+                            <div id="validation_for_Email"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Phone" class="control-label col-md-3"> Phone </label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="data.Phone" id="Phone" class="form-control" />
+                            <div id="validation_for_Phone"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Username" class="control-label col-md-3"> Username </label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="data.Username" id="Username" class="form-control" />
+                            <div id="validation_for_Username"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Password" class="control-label col-md-3"> Password </label>
+                        <div class="col-md-7">
+                            <input type="password" ng-model="data.Password" id="Password" class="form-control" />
+                            <div id="validation_for_Password"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image" class="control-label col-md-3"> Photo URL </label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="data.Image" id="Image" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="button" value="Sign Up" class="btn btn-blue" ng-click="signUp()" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

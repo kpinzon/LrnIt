@@ -1,0 +1,49 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Conversation</h2>
+    <p>
+        <a href="#/Conversation/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                TimeCreated
+            </th>
+            <th>
+                Subject
+            </th>
+            <th>
+                Users
+            </th>
+            <th>
+                Messages
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.TimeCreated }}
+            </td>
+            <td>
+                {{ item.Subject }}
+            </td>
+            <td>
+            </td>
+            <td>
+                    <a ng-href="#Message?Conversation={{item.Id }}" >
+                    {{item.Messages_Count}}
+                    </a>
+            </td>
+            <td>
+                <a ng-href="#/Conversation/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/Conversation/{{item.Id}}">Details</a> |
+                <a ng-href="#/Conversation/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Conversation</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            Are you sure that you want to delete {{Conversation}}?
+            <div class="form-group">
+                <label for="TimeCreated" class = "control-label col-md-2">
+                TimeCreated
+                </label>
+                <div class="col-md-10">
+                    {{data.TimeCreated}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Subject" class = "control-label col-md-2">
+                Subject
+                </label>
+                <div class="col-md-10">
+                    {{data.Subject}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Users" class = "control-label col-md-2">
+                 Users
+                </label>
+                <div class="col-md-10">
+                    {{data.Users_Count}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Messages" class = "control-label col-md-2">
+                 Messages
+                </label>
+                <div class="col-md-10">
+                    {{data.Messages_Count}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    
+    <div>
+        <a href="#/Conversation">Back to List</a>
+    </div>

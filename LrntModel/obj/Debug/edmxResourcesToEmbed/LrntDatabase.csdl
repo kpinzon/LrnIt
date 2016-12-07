@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="LrntDatabase" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="LrntDatabaseContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="LrntDatabase.User" />
+    <EntitySet Name="Tags" EntityType="LrntDatabase.Tag" />
+    <AssociationSet Name="TagUser" Association="LrntDatabase.TagUser">
+      <End Role="Tag" EntitySet="Tags" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="Contracts" EntityType="LrntDatabase.Contract" />
+    <AssociationSet Name="UserContract" Association="LrntDatabase.UserContract">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Contract" EntitySet="Contracts" />
+    </AssociationSet>
+    <EntitySet Name="Conversations" EntityType="LrntDatabase.Conversation" />
+    <AssociationSet Name="UserConversation" Association="LrntDatabase.UserConversation">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Conversation" EntitySet="Conversations" />
+    </AssociationSet>
+    <EntitySet Name="Messages" EntityType="LrntDatabase.Message" />
+    <AssociationSet Name="ConversationMessage" Association="LrntDatabase.ConversationMessage">
+      <End Role="Conversation" EntitySet="Conversations" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="MessageUser" Association="LrntDatabase.MessageUser">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="Categories" EntityType="LrntDatabase.Category" />
+    <AssociationSet Name="CategoryTag" Association="LrntDatabase.CategoryTag">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Tag" EntitySet="Tags" />
+    </AssociationSet>
+    <EntitySet Name="Expertises" EntityType="LrntDatabase.Expertise" />
+    <AssociationSet Name="UserExperience" Association="LrntDatabase.UserExperience">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Experience" EntitySet="Expertises" />
+    </AssociationSet>
+    <AssociationSet Name="UserConversation1" Association="LrntDatabase.UserConversation1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Conversation" EntitySet="Conversations" />
+    </AssociationSet>
+    <AssociationSet Name="UserConversation2" Association="LrntDatabase.UserConversation2">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Conversation" EntitySet="Conversations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fname" Type="String" Nullable="false" />
+    <Property Name="Lname" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="Phone" Type="String" Nullable="false" />
+    <Property Name="Username" Type="String" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" />
+    <Property Name="IsBanned" Type="Boolean" Nullable="true" DefaultValue="False" />
+    <Property Name="Bio" Type="String" Nullable="true" />
+    <Property Name="Image" Type="String" Nullable="true" />
+    <Property Name="HourlyRate" Type="Decimal" Nullable="true" />
+    <Property Name="IsTeacher" Type="Boolean" Nullable="true" DefaultValue="False" />
+    <NavigationProperty Name="Tags" Relationship="LrntDatabase.TagUser" FromRole="User" ToRole="Tag" />
+    <NavigationProperty Name="Contracts" Relationship="LrntDatabase.UserContract" FromRole="User" ToRole="Contract" />
+    <NavigationProperty Name="Conversations" Relationship="LrntDatabase.UserConversation" FromRole="User" ToRole="Conversation" />
+    <NavigationProperty Name="Messages" Relationship="LrntDatabase.MessageUser" FromRole="User" ToRole="Message" />
+    <Property Name="Headline" Type="String" Nullable="true" />
+    <NavigationProperty Name="Experiences" Relationship="LrntDatabase.UserExperience" FromRole="User" ToRole="Experience" />
+    <NavigationProperty Name="RecipientConversations" Relationship="LrntDatabase.UserConversation1" FromRole="User" ToRole="Conversation" />
+    <NavigationProperty Name="SenderConversations" Relationship="LrntDatabase.UserConversation2" FromRole="User" ToRole="Conversation" />
+  </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="LrntDatabase.TagUser" FromRole="Tag" ToRole="User" />
+    <NavigationProperty Name="Category" Relationship="LrntDatabase.CategoryTag" FromRole="Tag" ToRole="Category" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="TagUser">
+    <End Type="LrntDatabase.Tag" Role="Tag" Multiplicity="*" />
+    <End Type="LrntDatabase.User" Role="User" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsAccepted" Type="Boolean" Nullable="false" />
+    <Property Name="Rate" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="Owner" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="LrntDatabase.UserContract" FromRole="Contract" ToRole="User" />
+  </EntityType>
+  <Association Name="UserContract">
+    <End Type="LrntDatabase.User" Role="User" Multiplicity="*" />
+    <End Type="LrntDatabase.Contract" Role="Contract" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Conversation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" />
+    <Property Name="Subject" Type="String" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="LrntDatabase.UserConversation" FromRole="Conversation" ToRole="User" />
+    <NavigationProperty Name="Messages" Relationship="LrntDatabase.ConversationMessage" FromRole="Conversation" ToRole="Message" />
+    <NavigationProperty Name="Recipient" Relationship="LrntDatabase.UserConversation1" FromRole="Conversation" ToRole="User" />
+    <Property Name="RecipientId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Sender" Relationship="LrntDatabase.UserConversation2" FromRole="Conversation" ToRole="User" />
+    <Property Name="SenderId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="UserConversation">
+    <End Type="LrntDatabase.User" Role="User" Multiplicity="*" />
+    <End Type="LrntDatabase.Conversation" Role="Conversation" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Text" Type="String" Nullable="false" />
+    <Property Name="TimeSent" Type="DateTime" Nullable="false" />
+    <Property Name="IsRead" Type="Boolean" Nullable="false" DefaultValue="False" />
+    <NavigationProperty Name="Conversation" Relationship="LrntDatabase.ConversationMessage" FromRole="Message" ToRole="Conversation" />
+    <Property Name="ConversationId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="LrntDatabase.MessageUser" FromRole="Message" ToRole="User" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="ConversationMessage">
+    <End Type="LrntDatabase.Conversation" Role="Conversation" Multiplicity="1" />
+    <End Type="LrntDatabase.Message" Role="Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conversation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="ConversationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MessageUser">
+    <End Type="LrntDatabase.Message" Role="Message" Multiplicity="*" />
+    <End Type="LrntDatabase.User" Role="User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="true" />
+    <NavigationProperty Name="Tags" Relationship="LrntDatabase.CategoryTag" FromRole="Category" ToRole="Tag" />
+  </EntityType>
+  <Association Name="CategoryTag">
+    <End Type="LrntDatabase.Category" Role="Category" Multiplicity="1" />
+    <End Type="LrntDatabase.Tag" Role="Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tag">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Expertise">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="YearsExperience" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="LrntDatabase.UserExperience" FromRole="Experience" ToRole="User" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="UserExperience">
+    <End Type="LrntDatabase.User" Role="User" Multiplicity="1" />
+    <End Type="LrntDatabase.Expertise" Role="Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserConversation1">
+    <End Type="LrntDatabase.User" Role="User" Multiplicity="1" />
+    <End Type="LrntDatabase.Conversation" Role="Conversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Conversation">
+        <PropertyRef Name="RecipientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserConversation2">
+    <End Type="LrntDatabase.User" Role="User" Multiplicity="1" />
+    <End Type="LrntDatabase.Conversation" Role="Conversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Conversation">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

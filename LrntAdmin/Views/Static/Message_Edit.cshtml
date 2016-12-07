@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Message</h2>
+    <form name="theForm">
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Text" class = "control-label col-md-2"> Text </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Text" id="Text"  class="form-control"/>
+                    <div id="validation_for_Text"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="TimeSent" class = "control-label col-md-2"> TimeSent </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.TimeSent" id="TimeSent"  class="form-control"/>
+                    <div id="validation_for_TimeSent"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsRead" class = "control-label col-md-2"> IsRead </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.IsRead" id="IsRead"  class="form-control"/>
+                    <div id="validation_for_IsRead"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="ConversationId" class = "control-label col-md-2"> Conversation </label>
+                <div class="col-md-10">
+                    <select ng-model="data.ConversationId" id="ConversationId"  class="form-control"
+                            ng-options="option.Id as option.Name for option in ConversationId_options">
+                        <option value="">-- choose Conversation --</option>
+                    </select>
+                    <div id="validation_for_ConversationId"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="UserId" class = "control-label col-md-2"> User </label>
+                <div class="col-md-10">
+                    <select ng-model="data.UserId" id="UserId"  class="form-control"
+                            ng-options="option.Id as option.Name for option in UserId_options">
+                        <option value="">-- choose User --</option>
+                    </select>
+                    <div id="validation_for_UserId"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div>
+        <a href="#/Message">Back to List</a>
+    </div>

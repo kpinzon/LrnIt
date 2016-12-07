@@ -1,0 +1,127 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>User</h2>
+    <p>
+        <a href="#/User/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Fname
+            </th>
+            <th>
+                Lname
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                IsBanned
+            </th>
+            <th>
+                Bio
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                HourlyRate
+            </th>
+            <th>
+                IsTeacher
+            </th>
+            <th>
+                Headline
+            </th>
+            <th>
+                Tags
+            </th>
+            <th>
+                Contracts
+            </th>
+            <th>
+                Conversations
+            </th>
+            <th>
+                Messages
+            </th>
+            <th>
+                Experiences
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.Fname }}
+            </td>
+            <td>
+                {{ item.Lname }}
+            </td>
+            <td>
+                {{ item.Email }}
+            </td>
+            <td>
+                {{ item.Phone }}
+            </td>
+            <td>
+                {{ item.Username }}
+            </td>
+            <td>
+                {{ item.Password }}
+            </td>
+            <td>
+                {{ item.IsBanned }}
+            </td>
+            <td>
+                {{ item.Bio }}
+            </td>
+            <td>
+                {{ item.Image }}
+            </td>
+            <td>
+                {{ item.HourlyRate }}
+            </td>
+            <td>
+                {{ item.IsTeacher }}
+            </td>
+            <td>
+                {{ item.Headline }}
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+                    <a ng-href="#Message?User={{item.Id }}" >
+                    {{item.Messages_Count}}
+                    </a>
+            </td>
+            <td>
+                    <a ng-href="#Expertise?User={{item.Id }}" >
+                    {{item.Experiences_Count}}
+                    </a>
+            </td>
+            <td>
+                <a ng-href="#/User/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/User/{{item.Id}}">Details</a> |
+                <a ng-href="#/User/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

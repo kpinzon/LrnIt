@@ -1,0 +1,109 @@
+﻿ <!-- Profile Head -->
+<div class="profileHeadContainer container col-md-offset-3 pageView">
+    <div class="row">
+        <div class="col-md-2">
+            <img src={{profileUser.Image}} height="128" width="128" />
+        </div>
+        <div class="col-md-10">
+            <button class="btn" ng-click="saveChangesToProfile()">Save Changes To Profile</button>
+        </div>
+
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3 style="display:inline">Edit First Name:</h3><input type="text" ng-model="tempUser.Fname" /> <h3 style="display:inline">Edit Last Name:</h3><input type="text" ng-model="tempUser.Lname" />
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6 col-md-offset-2 dashed">
+            <div>Edit Headline</div>
+            <h5><textarea ng-model="tempUser.Headline"></textarea></h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-offset-3 col-md-3">
+            <span ng-repeat="tag in tempUser.Tags" class="col-md-3">
+                <button class="editTagBtn btn btn-xs btn-default">{{tag.Name}}</button><button ng-click="removeTag(tag)" class="editTagBtn btn btn-xs btn-danger">X</button>
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="col-md-offset-1">
+                <span class="text-center">Add Tags</span>
+            </div>
+            <div class="col-md-4">
+                <div class="dropdown">
+                    <span>Category:</span><button class="btn dropdown-toggle" type="button" data-toggle="dropdown">{{editProfileCategPlaceholder}}<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li style="cursor:pointer" ng-repeat="category in allCategories" ng-click="getTagsForSelectedCategory(category)">{{category.Name}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <span>Tag:</span><button class="btn dropdown-toggle" type="button" data-toggle="dropdown">{{editProfileTagPlaceholder}}<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="tag in tagsForCategory" ng-click="storeTagToAdd(tag)">{{tag.Name}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn" ng-click="addTagToUser(tagToAdd)">Add Tag</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>About Me</h3>
+        </div>
+        <div class="col-md-6">
+            {{tempUser.Bio}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Experience</h3>
+        </div>
+        <
+
+        <div class="row experienceText col-md-12" ng-repeat="expertise in profileExpertise">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <div class="col-md-5">
+                            <h3 class="expertiseName">{{expertise.Name}}</h3>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-12"> <h4>{{expertise.YearsExperience}} many years of experience !</h4></div>
+            <div class="col-md-8 ">
+                <p>
+                    {{expertise.Description}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,175 @@
+﻿@{
+    Layout = null;
+}
+    <h2>User Details Test</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Fname" class = "control-label col-md-2">
+                Fname
+                </label>
+                <div class="col-md-10">
+                    {{data.Fname}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Lname" class = "control-label col-md-2">
+                Lname
+                </label>
+                <div class="col-md-10">
+                    {{data.Lname}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Email" class = "control-label col-md-2">
+                Email
+                </label>
+                <div class="col-md-10">
+                    {{data.Email}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Phone" class = "control-label col-md-2">
+                Phone
+                </label>
+                <div class="col-md-10">
+                    {{data.Phone}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Username" class = "control-label col-md-2">
+                Username
+                </label>
+                <div class="col-md-10">
+                    {{data.Username}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Password" class = "control-label col-md-2">
+                Password
+                </label>
+                <div class="col-md-10">
+                    {{data.Password}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsBanned" class = "control-label col-md-2">
+                IsBanned
+                </label>
+                <div class="col-md-10">
+                    {{data.IsBanned}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Bio" class = "control-label col-md-2">
+                Bio
+                </label>
+                <div class="col-md-10">
+                    {{data.Bio}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Image" class = "control-label col-md-2">
+                Image
+                </label>
+                <div class="col-md-10">
+                    {{data.Image}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="HourlyRate" class = "control-label col-md-2">
+                HourlyRate
+                </label>
+                <div class="col-md-10">
+                    {{data.HourlyRate}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsTeacher" class = "control-label col-md-2">
+                IsTeacher
+                </label>
+                <div class="col-md-10">
+                    {{data.IsTeacher}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Headline" class = "control-label col-md-2">
+                Headline
+                </label>
+                <div class="col-md-10">
+                    {{data.Headline}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Tags" class = "control-label col-md-2">
+                 Tags
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Tag?User={{data.Id }}" >
+                    {{data.Tags_Count}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Contracts" class = "control-label col-md-2">
+                 Contracts
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Contract?User={{data.Id }}" >
+                    {{data.Contracts_Count}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Conversations" class = "control-label col-md-2">
+                 Conversations
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Conversation?User={{data.Id }}" >
+                    {{data.Conversations_Count}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Messages" class = "control-label col-md-2">
+                 Messages
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Message?User={{data.Id }}" >
+                    {{data.Messages_Count}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Experiences" class = "control-label col-md-2">
+                 Experiences
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Expertise?User={{data.Id }}" >
+                    {{data.Experiences_Count}}
+                    </a>
+                </div>
+            </div>
+    
+           
+        </div>
+    
+    <div>
+        <a href="#/User">Back to List</a>
+    </div>

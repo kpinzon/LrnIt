@@ -1,0 +1,13 @@
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\LrntModel.dll.config
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\LrntModel.dll
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\LrntModel.pdb
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\CloudinaryDotNet.dll
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\EntityFramework.dll
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\Newtonsoft.Json.dll
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\EntityFramework.xml
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Redwood\Projects\LrnIt\LrntModel\bin\Debug\Newtonsoft.Json.xml
+C:\Redwood\Projects\LrnIt\LrntModel\obj\Debug\LrntModel.csprojResolveAssemblyReference.cache
+C:\Redwood\Projects\LrnIt\LrntModel\obj\Debug\LrntModel.dll
+C:\Redwood\Projects\LrnIt\LrntModel\obj\Debug\LrntModel.pdb

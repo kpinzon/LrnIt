@@ -1,0 +1,50 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Expertise</h2>
+    <p>
+        <a href="#/Expertise/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                YearsExperience
+            </th>
+            <th>
+                User
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.Name }}
+            </td>
+            <td>
+                {{ item.Description }}
+            </td>
+            <td>
+                {{ item.YearsExperience }}
+            </td>
+            <td>
+                    <a ng-href="#User/{{item.UserId }}" >
+                    {{item.User_Fname}}
+                    </a>
+            </td>
+            <td>
+                <a ng-href="#/Expertise/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/Expertise/{{item.Id}}">Details</a> |
+                <a ng-href="#/Expertise/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

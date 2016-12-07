@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Category Details Test</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2">
+                Name
+                </label>
+                <div class="col-md-10">
+                    {{data.Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Description" class = "control-label col-md-2">
+                Description
+                </label>
+                <div class="col-md-10">
+                    {{data.Description}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Tags" class = "control-label col-md-2">
+                 Tags
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Tag?Category={{data.Id }}" >
+                    {{data.Tags_Count}}
+                    </a>
+                </div>
+            </div>
+    
+           
+        </div>
+    
+    <div>
+        <a href="#/Category">Back to List</a>
+    </div>

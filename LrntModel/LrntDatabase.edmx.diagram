@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f7f7ae041ca04d82b42857a031c9e471" Name="Diagram1" ZoomLevel="112" >
+        <EntityTypeShape EntityType="LrntDatabase.User" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="LrntDatabase.Tag" Width="1.5" PointX="3" PointY="4.5" />
+        <AssociationConnector Association="LrntDatabase.TagUser" />
+        <EntityTypeShape EntityType="LrntDatabase.Contract" Width="1.5" PointX="7.625" PointY="4.125" />
+        <AssociationConnector Association="LrntDatabase.UserContract" />
+        <EntityTypeShape EntityType="LrntDatabase.Conversation" Width="1.5" PointX="7.5" PointY="7.125" />
+        <AssociationConnector Association="LrntDatabase.UserConversation" />
+        <EntityTypeShape EntityType="LrntDatabase.Message" Width="1.5" PointX="9.75" PointY="7.125" />
+        <AssociationConnector Association="LrntDatabase.ConversationMessage" />
+        <AssociationConnector Association="LrntDatabase.MessageUser" />
+        <EntityTypeShape EntityType="LrntDatabase.Category" Width="1.5" PointX="0.75" PointY="4.5" />
+        <AssociationConnector Association="LrntDatabase.CategoryTag" />
+        <EntityTypeShape EntityType="LrntDatabase.Expertise" Width="1.5" PointX="7.5" PointY="1.25" />
+        <AssociationConnector Association="LrntDatabase.UserExperience" />
+        <AssociationConnector Association="LrntDatabase.UserConversation1" />
+        <AssociationConnector Association="LrntDatabase.UserConversation2" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

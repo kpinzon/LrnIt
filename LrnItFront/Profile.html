@@ -1,0 +1,88 @@
+﻿ <!-- Profile Head -->
+<div class="profileHeadContainer container col-md-offset-3">
+    <div class="row">
+        <div class="col-md-2">
+            <img src={{profileUser.Image}} height="128" width="128" />
+        </div>
+        <div class="col-md-10">
+            <div>
+                <h3 class="dashed">{{profileUser.Fname}} {{profileUser.Lname}}</h3>
+            </div>
+            <div>
+                <h5>{{profileUser.Headline}}</h5>
+            </div>
+        </div>
+       
+
+        
+    </div>
+
+     <div class="row">
+         <div class="col-md-12">
+             <h6 class="btn btn-primary" ng-show="isOwnProfile" ng-click="editProfile()">Edit Profile</h6>
+             <h6 class="btn btn-primary" ng-hide="isOwnProfile" ng-click="sendMessage()">Message</h6>
+         </div>
+         
+     </div>
+
+     <div class="row">
+         
+         <div class="col-md-6">
+             <button  ng-repeat="tag in profileUserTags" class="profileTags col-md-2 btn btn-xs btn-default">{{tag.Name}}</button>
+             
+         </div>
+     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>About Me</h3>
+        </div>
+        <div class="col-md-6">
+            {{profileUser.Bio}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Experience</h3>
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-default" ng-show="isOwnProfile" ng-click="clickAddExperience()">Add Experience</button>
+        </div>
+      
+        <div class="row experienceText col-md-12" ng-repeat="expertise in profileExpertise">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <div class="col-md-5">
+                            <h3 class="expertiseName">{{expertise.Name}}</h3>
+                        </div>
+
+                        <button ng-if="isOwnProfile" class="editExperienceBtn btn btn-sm btn-warning" ng-click="editExperience(expertise)">Edit</button>
+
+
+                        <button ng-if="isOwnProfile" class="editExperienceBtn btn btn-sm btn-danger" ng-click="deleteExpertise(expertise.Id,expertise)">Delete</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-12"> <h4>{{expertise.YearsExperience}} many years of experience !</h4></div>
+            <div class="col-md-8 ">
+                <p>
+                    {{expertise.Description}}
+                </p>
+            </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+

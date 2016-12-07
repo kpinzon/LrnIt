@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Expertise Details Test</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2">
+                Name
+                </label>
+                <div class="col-md-10">
+                    {{data.Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Description" class = "control-label col-md-2">
+                Description
+                </label>
+                <div class="col-md-10">
+                    {{data.Description}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="YearsExperience" class = "control-label col-md-2">
+                YearsExperience
+                </label>
+                <div class="col-md-10">
+                    {{data.YearsExperience}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="User" class = "control-label col-md-2">
+                 User
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#User/{{User }}" >
+                    {{data.User_Fname}}
+                    </a>
+                </div>
+            </div>
+    
+           
+        </div>
+    
+    <div>
+        <a href="#/Expertise">Back to List</a>
+    </div>

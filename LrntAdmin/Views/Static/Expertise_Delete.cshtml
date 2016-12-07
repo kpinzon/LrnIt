@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Expertise</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            Are you sure that you want to delete {{Expertise}}?
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2">
+                Name
+                </label>
+                <div class="col-md-10">
+                    {{data.Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Description" class = "control-label col-md-2">
+                Description
+                </label>
+                <div class="col-md-10">
+                    {{data.Description}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="YearsExperience" class = "control-label col-md-2">
+                YearsExperience
+                </label>
+                <div class="col-md-10">
+                    {{data.YearsExperience}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="User" class = "control-label col-md-2">
+                 User
+                </label>
+                <div class="col-md-10">
+                    {{data.User_Fname}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    
+    <div>
+        <a href="#/Expertise">Back to List</a>
+    </div>

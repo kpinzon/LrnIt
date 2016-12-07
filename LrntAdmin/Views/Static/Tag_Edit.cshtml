@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Tag</h2>
+    <form name="theForm">
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2"> Name </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Name" id="Name"  class="form-control"/>
+                    <div id="validation_for_Name"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="CategoryId" class = "control-label col-md-2"> Category </label>
+                <div class="col-md-10">
+                    <select ng-model="data.CategoryId" id="CategoryId"  class="form-control"
+                            ng-options="option.Id as option.Name for option in CategoryId_options">
+                        <option value="">-- choose Category --</option>
+                    </select>
+                    <div id="validation_for_CategoryId"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div>
+        <a href="#/Tag">Back to List</a>
+    </div>

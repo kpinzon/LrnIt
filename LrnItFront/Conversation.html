@@ -1,0 +1,35 @@
+﻿<div class="row" style="padding-top: 70px">
+    <h1 class="text-center">Your Conversation With: {{userTalkingToFName}} {{userTalkingToLName}}</h1>
+    <h3 class="text-center">{{selectedConvo.Subject}}</h3>
+    <div class="col-md-6 col-md-offset-3 dashed">
+
+        <div class="row" ng-repeat="message in selectedConvo.Messages">
+            
+            <div class="col-md-10">
+                <div>
+                    From: {{message.User.Fname}} {{message.User.Lname}}
+                </div>
+                <div>
+                    Sent: {{message.TimeSent}}
+                </div>
+                <div>
+                    <div>
+                        <strong>Message</strong>
+                    </div>
+                    <div>
+                        {{message.Text}}
+                    </div>
+                </div>
+                
+            </div>
+            <hr />
+        </div>
+        
+        <div class="row dashed" style="height:75px">
+            <textarea style="width:100%" placeholder="Enter Message to Send" ng-model="messageToSend"></textarea>
+        </div>
+        <div>
+            <button class="btn btn-primary" ng-click="sendMessageInConvo()">Send Message</button>
+        </div>
+    </div>
+</div>

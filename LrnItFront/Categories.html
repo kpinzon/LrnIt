@@ -1,0 +1,64 @@
+﻿<div class="container categories">
+    <div class="row text-center">Viewing Experts specializing in: <strong>{{topicName}}</strong></div>
+    <div class="row listOfUsers" ng-repeat="user in users">
+        <div class="profileImage col-md-2 col-md-offset-1">
+            <img src={{user.Image}} width="128" height="128" alt="Alternate Text" />
+        </div>
+        <div class="col-md-6">
+            <div >
+                <span><strong><a style="cursor: pointer" ng-click="viewProfile(user,user.Id)">{{user.Fname}} {{user.Lname}}</a></strong></span>
+            </div>
+            <div>
+                <span><strong>{{user.Headline}}</strong></span>
+            </div>
+            <div>
+                <span>{{user.Bio}}</span>
+            </div>
+            
+            
+            <div>
+                <button class="btn btn-xs btn-default"ng-repeat="tag in user.Tags track by $index">
+                     <span ng-click="goToUsersInTopic('?TagId=',tag.Id, tag.Name)">{{tag.Name}}</span>
+                </button>
+            </div>
+
+        </div>
+        <div class="col-md-2">
+            <button ng-if="lrnItService.loggedInNav" ng-click="sendMessage(user)" class="btn btn-primary">Message</button>
+
+            <!-- Button not signed in, opens up modal saying to login or signup -->
+            <a data-toggle="modal" data-target="#signInModal" ng-if="!lrnItService.loggedInNav" class="btn btn-primary">Message</a>
+        </div>
+            
+        
+       
+
+
+    </div>
+    <!-- Modal -->
+    <div id="signInModal" class="modal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header row text-center">
+                    <div>
+                        <img src="images/smash.gif" />
+                    </div>
+                    <div>
+                        <h3>You must be signed in to message a user</h3>
+                    </div>
+                </div>
+                <div class="row modal-body">
+                    <div class="col-md-2 col-md-offset-4">
+                        <button ui-sref="login" class="btn btn-primary">Login</button>
+                    </div>
+                    <div class="col-md-6">
+                        <a ui-sref="signUp" class="btn btn-primary">Sign Up</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

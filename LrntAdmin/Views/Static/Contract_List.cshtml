@@ -1,0 +1,53 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Contract</h2>
+    <p>
+        <a href="#/Contract/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                IsAccepted
+            </th>
+            <th>
+                Rate
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Owner
+            </th>
+            <th>
+                Users
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.IsAccepted }}
+            </td>
+            <td>
+                {{ item.Rate }}
+            </td>
+            <td>
+                {{ item.Description }}
+            </td>
+            <td>
+                {{ item.Owner }}
+            </td>
+            <td>
+            </td>
+            <td>
+                <a ng-href="#/Contract/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/Contract/{{item.Id}}">Details</a> |
+                <a ng-href="#/Contract/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

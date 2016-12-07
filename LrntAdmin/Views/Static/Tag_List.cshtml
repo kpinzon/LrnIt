@@ -1,0 +1,43 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Tag</h2>
+    <p>
+        <a href="#/Tag/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Users
+            </th>
+            <th>
+                Category
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.Name }}
+            </td>
+            <td>
+            </td>
+            <td>
+                    <a ng-href="#Category/{{item.CategoryId }}" >
+                    {{item.Category_Name}}
+                    </a>
+            </td>
+            <td>
+                <a ng-href="#/Tag/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/Tag/{{item.Id}}">Details</a> |
+                <a ng-href="#/Tag/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

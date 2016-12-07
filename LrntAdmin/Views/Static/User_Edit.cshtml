@@ -1,0 +1,114 @@
+﻿@{
+    Layout = null;
+}
+    <h2>User</h2>
+    <form name="theForm">
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Fname" class = "control-label col-md-2"> Fname </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Fname" id="Fname"  class="form-control"/>
+                    <div id="validation_for_Fname"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Lname" class = "control-label col-md-2"> Lname </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Lname" id="Lname"  class="form-control"/>
+                    <div id="validation_for_Lname"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Email" class = "control-label col-md-2"> Email </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Email" id="Email"  class="form-control"/>
+                    <div id="validation_for_Email"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Phone" class = "control-label col-md-2"> Phone </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Phone" id="Phone"  class="form-control"/>
+                    <div id="validation_for_Phone"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Username" class = "control-label col-md-2"> Username </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Username" id="Username"  class="form-control"/>
+                    <div id="validation_for_Username"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Password" class = "control-label col-md-2"> Password </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Password" id="Password"  class="form-control"/>
+                    <div id="validation_for_Password"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsBanned" class = "control-label col-md-2"> IsBanned </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.IsBanned" id="IsBanned"  class="form-control"/>
+                    <div id="validation_for_IsBanned"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Bio" class = "control-label col-md-2"> Bio </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Bio" id="Bio"  class="form-control"/>
+                    <div id="validation_for_Bio"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Image" class = "control-label col-md-2"> Image </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Image" id="Image"  class="form-control"/>
+                    <div id="validation_for_Image"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="HourlyRate" class = "control-label col-md-2"> HourlyRate </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.HourlyRate" id="HourlyRate"  class="form-control"/>
+                    <div id="validation_for_HourlyRate"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsTeacher" class = "control-label col-md-2"> IsTeacher </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.IsTeacher" id="IsTeacher"  class="form-control"/>
+                    <div id="validation_for_IsTeacher"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Headline" class = "control-label col-md-2"> Headline </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Headline" id="Headline"  class="form-control"/>
+                    <div id="validation_for_Headline"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div>
+        <a href="#/User">Back to List</a>
+    </div>

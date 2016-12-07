@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Category</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            Are you sure that you want to delete {{Category}}?
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2">
+                Name
+                </label>
+                <div class="col-md-10">
+                    {{data.Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Description" class = "control-label col-md-2">
+                Description
+                </label>
+                <div class="col-md-10">
+                    {{data.Description}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Tags" class = "control-label col-md-2">
+                 Tags
+                </label>
+                <div class="col-md-10">
+                    {{data.Tags_Count}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    
+    <div>
+        <a href="#/Category">Back to List</a>
+    </div>

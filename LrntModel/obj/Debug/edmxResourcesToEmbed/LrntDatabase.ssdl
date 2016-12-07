@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LrntDatabase.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LrntDatabaseStoreContainer">
+    <EntitySet Name="Users" EntityType="LrntDatabase.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tags" EntityType="LrntDatabase.Store.Tags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contracts" EntityType="LrntDatabase.Store.Contracts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Conversations" EntityType="LrntDatabase.Store.Conversations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Messages" EntityType="LrntDatabase.Store.Messages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="LrntDatabase.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Expertises" EntityType="LrntDatabase.Store.Expertises" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TagUser" EntityType="LrntDatabase.Store.TagUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserContract" EntityType="LrntDatabase.Store.UserContract" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserConversation" EntityType="LrntDatabase.Store.UserConversation" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_TagUser_Tag" Association="LrntDatabase.Store.FK_TagUser_Tag">
+      <End Role="Tag" EntitySet="Tags" />
+      <End Role="TagUser" EntitySet="TagUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TagUser_User" Association="LrntDatabase.Store.FK_TagUser_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TagUser" EntitySet="TagUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserContract_User" Association="LrntDatabase.Store.FK_UserContract_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserContract" EntitySet="UserContract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserContract_Contract" Association="LrntDatabase.Store.FK_UserContract_Contract">
+      <End Role="Contract" EntitySet="Contracts" />
+      <End Role="UserContract" EntitySet="UserContract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserConversation_User" Association="LrntDatabase.Store.FK_UserConversation_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserConversation" EntitySet="UserConversation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserConversation_Conversation" Association="LrntDatabase.Store.FK_UserConversation_Conversation">
+      <End Role="Conversation" EntitySet="Conversations" />
+      <End Role="UserConversation" EntitySet="UserConversation" />
+    </AssociationSet>
+    <AssociationSet Name="ConversationMessage" Association="LrntDatabase.Store.ConversationMessage">
+      <End Role="Conversation" EntitySet="Conversations" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="MessageUser" Association="LrntDatabase.Store.MessageUser">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryTag" Association="LrntDatabase.Store.CategoryTag">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Tag" EntitySet="Tags" />
+    </AssociationSet>
+    <AssociationSet Name="UserExperience" Association="LrntDatabase.Store.UserExperience">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Experience" EntitySet="Expertises" />
+    </AssociationSet>
+    <AssociationSet Name="UserConversation1" Association="LrntDatabase.Store.UserConversation1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Conversation" EntitySet="Conversations" />
+    </AssociationSet>
+    <AssociationSet Name="UserConversation2" Association="LrntDatabase.Store.UserConversation2">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Conversation" EntitySet="Conversations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Lname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsBanned" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="Bio" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="HourlyRate" Type="decimal" Nullable="true" />
+    <Property Name="IsTeacher" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="Headline" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contracts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsAccepted" Type="bit" Nullable="false" />
+    <Property Name="Rate" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Owner" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Conversations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RecipientId" Type="int" Nullable="false" />
+    <Property Name="SenderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeSent" Type="datetime" Nullable="false" />
+    <Property Name="IsRead" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="ConversationId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Expertises">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YearsExperience" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagUser">
+    <Key>
+      <PropertyRef Name="Tags_Id" />
+      <PropertyRef Name="Users_Id" />
+    </Key>
+    <Property Name="Tags_Id" Type="int" Nullable="false" />
+    <Property Name="Users_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserContract">
+    <Key>
+      <PropertyRef Name="Users_Id" />
+      <PropertyRef Name="Contracts_Id" />
+    </Key>
+    <Property Name="Users_Id" Type="int" Nullable="false" />
+    <Property Name="Contracts_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserConversation">
+    <Key>
+      <PropertyRef Name="Users_Id" />
+      <PropertyRef Name="Conversations_Id" />
+    </Key>
+    <Property Name="Users_Id" Type="int" Nullable="false" />
+    <Property Name="Conversations_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ConversationMessage">
+    <End Role="Conversation" Type="LrntDatabase.Store.Conversations" Multiplicity="1" />
+    <End Role="Message" Type="LrntDatabase.Store.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conversation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="ConversationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MessageUser">
+    <End Role="Message" Type="LrntDatabase.Store.Messages" Multiplicity="*" />
+    <End Role="User" Type="LrntDatabase.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryTag">
+    <End Role="Category" Type="LrntDatabase.Store.Categories" Multiplicity="1" />
+    <End Role="Tag" Type="LrntDatabase.Store.Tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tag">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserExperience">
+    <End Role="User" Type="LrntDatabase.Store.Users" Multiplicity="1" />
+    <End Role="Experience" Type="LrntDatabase.Store.Expertises" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserConversation1">
+    <End Role="User" Type="LrntDatabase.Store.Users" Multiplicity="1" />
+    <End Role="Conversation" Type="LrntDatabase.Store.Conversations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Conversation">
+        <PropertyRef Name="RecipientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserConversation2">
+    <End Role="User" Type="LrntDatabase.Store.Users" Multiplicity="1" />
+    <End Role="Conversation" Type="LrntDatabase.Store.Conversations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Conversation">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TagUser_Tag">
+    <End Role="Tag" Type="LrntDatabase.Store.Tags" Multiplicity="1" />
+    <End Role="TagUser" Type="LrntDatabase.Store.TagUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TagUser">
+        <PropertyRef Name="Tags_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TagUser_User">
+    <End Role="TagUser" Type="LrntDatabase.Store.TagUser" Multiplicity="*" />
+    <End Role="User" Type="LrntDatabase.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TagUser">
+        <PropertyRef Name="Users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserContract_User">
+    <End Role="User" Type="LrntDatabase.Store.Users" Multiplicity="1" />
+    <End Role="UserContract" Type="LrntDatabase.Store.UserContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserContract">
+        <PropertyRef Name="Users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserContract_Contract">
+    <End Role="UserContract" Type="LrntDatabase.Store.UserContract" Multiplicity="*" />
+    <End Role="Contract" Type="LrntDatabase.Store.Contracts" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserContract">
+        <PropertyRef Name="Contracts_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserConversation_User">
+    <End Role="User" Type="LrntDatabase.Store.Users" Multiplicity="1" />
+    <End Role="UserConversation" Type="LrntDatabase.Store.UserConversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserConversation">
+        <PropertyRef Name="Users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserConversation_Conversation">
+    <End Role="UserConversation" Type="LrntDatabase.Store.UserConversation" Multiplicity="*" />
+    <End Role="Conversation" Type="LrntDatabase.Store.Conversations" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Conversation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserConversation">
+        <PropertyRef Name="Conversations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

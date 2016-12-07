@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Conversation Details Test</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="TimeCreated" class = "control-label col-md-2">
+                TimeCreated
+                </label>
+                <div class="col-md-10">
+                    {{data.TimeCreated}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Subject" class = "control-label col-md-2">
+                Subject
+                </label>
+                <div class="col-md-10">
+                    {{data.Subject}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Users" class = "control-label col-md-2">
+                 Users
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#User?Conversation={{data.Id }}" >
+                    {{data.Users_Count}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Messages" class = "control-label col-md-2">
+                 Messages
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Message?Conversation={{data.Id }}" >
+                    {{data.Messages_Count}}
+                    </a>
+                </div>
+            </div>
+    
+           
+        </div>
+    
+    <div>
+        <a href="#/Conversation">Back to List</a>
+    </div>

@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Contract</h2>
+    <form name="theForm">
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="IsAccepted" class = "control-label col-md-2"> IsAccepted </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.IsAccepted" id="IsAccepted"  class="form-control"/>
+                    <div id="validation_for_IsAccepted"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Rate" class = "control-label col-md-2"> Rate </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Rate" id="Rate"  class="form-control"/>
+                    <div id="validation_for_Rate"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Description" class = "control-label col-md-2"> Description </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Description" id="Description"  class="form-control"/>
+                    <div id="validation_for_Description"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Owner" class = "control-label col-md-2"> Owner </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Owner" id="Owner"  class="form-control"/>
+                    <div id="validation_for_Owner"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div>
+        <a href="#/Contract">Back to List</a>
+    </div>
